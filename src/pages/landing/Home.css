@@ -5,7 +5,7 @@
     padding: 0 2rem;
 }
 
-/* Scroll snap va en html/body, no en el contenedor interno */
+
 html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -17,7 +17,7 @@ html {
     text-align: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    min-height: 100vh; /* Necesario para que el snap tenga sentido */
+    min-height: 100vh; 
 }
 
 .hero-label {
@@ -25,6 +25,7 @@ html {
     font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
+    padding: 0px 2px 0px 2px;
     letter-spacing: 0.1em;
 }
 
@@ -49,161 +50,7 @@ html {
 }
 
 /* Bento Grid Layout */
-.bento-layout {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 100vh; 
-    gap: 0; 
-    margin-bottom: 0;
 
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.bento-goal-preview .video-overlay {
-    opacity: 1;
-    background: black;
-    transition: opacity 0.6s ease;
-}
-.bento-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 2.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-
-    /* Snap en cada card individualmente */
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
-.bento-card.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.bento-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-/* Grid Positioning */
-.bento-main-display {
-    grid-column: span 12;
-    grid-row: span 1;
-    position: relative;
-    overflow: hidden;
-    padding: 0;
-    min-height: 300px;
-}
-
-
-
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-/* Video card content */
-.card-content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2.5rem;
-    box-sizing: border-box;
-}
-.card-tag{
-    margin-top: 60px;
-}
-.feature-title{
-    color: var(--placeholder);
-}
-.card-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: #ffffff;
-}
-
-.card-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 400px;
-    line-height: 1.4;
-    padding-left: 1rem;
-    border-left: 2px solid var(--accent-blue);
-}
-
-.card-text-position{
-    margin-top: 50px;
-
-}
-
-/* Goal Preview Cards */
-.bento-goal-preview {
-    grid-column: span 6;
-    grid-row: span 1;
-    position: relative;
-    overflow: hidden;
-}
-
-.about-kays-trigger {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2.5rem;
-}
-.btn-explore {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.8rem 1.5rem;
-    background: var(--buttons-color);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    width: fit-content;
-}
-
-.arrow-icon {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.4s ease;
-}
-
-.bento-goal-preview:hover .btn-explore {
-    color: --buttons-color-transition;
-    transform: translateY(-5px);
-}
-
-.bento-goal-preview:hover .arrow-icon {
-    transform: translateX(5px);
-}
 
 /* Feature Card */
 .bento-feature {
@@ -282,8 +129,13 @@ html {
 @media (max-width: 640px) {
     .hero-wrapper {
         padding: 4rem 0 2rem;
+        display: flex;
+        justify-content: center;
     }
     .auth-controls {
         display: none;
+    }
+    .hero-subtext{
+        padding: 0px 5px 0px 5px
     }
 }
