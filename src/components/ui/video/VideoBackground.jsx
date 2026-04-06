@@ -16,7 +16,6 @@ const VideoBackground = ({ posterUrl, videoUrl }) => {
             >
                 <source src={src} type="video/mp4"/>
             </video>
-            <div className="video-overlay"></div>
         </div>
     );
 };

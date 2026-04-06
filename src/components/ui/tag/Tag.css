@@ -1,0 +1,15 @@
+.dinamContainer__tag {
+    background: var(--card-tag);
+    color: var(--text-contrast);
+
+    display: inline-block;
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

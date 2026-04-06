@@ -1,12 +1,11 @@
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
 .main-content {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-}
 

@@ -7,7 +7,7 @@
 }
 
 .hero-label {
-    color: var(--accent-blue);
+    color: var(--text-primary);
     font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -23,7 +23,7 @@
 }
 
 .hero-gradient {
-    background: var(--accent-gradient);
+    background: var(--text-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
