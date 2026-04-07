@@ -1,28 +1,37 @@
+import { useEffect, useState } from 'react';
 import Button from '../../../ui/button/Button';
 import './Nav.css';
 
-
 const Nav = () => {
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const vh100 = window.innerHeight;
+            setIsSticky(window.scrollY > vh100);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <>
-            <header className="site-header">
-                <nav className="nav-container">
-                    <div className="brand-identity">
-                        <span className="brand-logo">KAYS</span>
-                    </div>
-                    
-                    <div className="auth-controls">
-                        <Button variant='secondary'>
-                            Log in
-                        </Button>
-                        {/* size defined in nav.css */}
-                        <Button variant='primary' animation='animation'>
-                            Create account
-                        </Button>
-                    </div>
-                </nav>
-            </header>
-        </>
+        <header className={`site-header ${isSticky ? 'is-sticky' : ''}`}>
+            <nav className="nav-container">
+                <div className="brand-identity">
+                    <span className="brand-logo">KAYS</span>
+                </div>
+                
+                <div className="auth-controls">
+                    <Button variant={isSticky ? 'contrast' : 'secondary'}>
+                        Log in
+                    </Button>
+                    <Button variant='primary' animation='animation'>
+                        Create account
+                    </Button>
+                </div>
+            </nav>
+        </header>
     );
 }
 

@@ -1,6 +1,6 @@
 import './Buttons.css';
 
-const Button = ({children, variant = 'primary', animation = 'none', onClick}) => {
+const Button = ({children, variant, animation = 'none', onClick}) => {
     const className = `btn-${variant} btn-${animation}`;
 
     return (

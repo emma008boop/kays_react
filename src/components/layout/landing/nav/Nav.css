@@ -16,9 +16,6 @@
     display: flex;
     justify-content: space-between;
 }
-
-
-
 .brand-logo {
     font-size: 1.25rem;
     font-weight: 800;
@@ -28,4 +25,8 @@
 .auth-controls {
     display: flex;
     gap: 1rem;
+}
+.site-header.is-sticky .brand-logo {
+    color: var(--text-contrast); 
+    transition: color .2s ease-in-out;
 }
